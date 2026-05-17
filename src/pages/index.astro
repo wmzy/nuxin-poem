@@ -6,6 +6,7 @@ const poems = await getCollection('poems');
 const sorted = poems.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="诗">
@@ -14,7 +15,7 @@ const sorted = poems.sort(
       <ul class="poem-list">
         {sorted.map((poem) => (
           <li>
-            <a href={`/poems/${poem.id}`} class="poem-card">
+            <a href={`${base}poems/${poem.id}`} class="poem-card">
               <div>
                 <h2 class="poem-title">{poem.data.title}</h2>
                 {poem.data.excerpt && (
