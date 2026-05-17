@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const poems = await getCollection('poems');
+const sorted = poems.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<BaseLayout title="诗">
+  {
+    sorted.length > 0 ? (
+      <ul class="poem-list">
+        {sorted.map((poem) => (
+          <li>
+            <a href={`/poems/${poem.id}`} class="poem-card">
+              <div>
+                <h2 class="poem-title">{poem.data.title}</h2>
+                {poem.data.excerpt && (
+                  <p class="poem-desc">{poem.data.excerpt}</p>
+                )}
+              </div>
+              <time class="poem-date">
+                {poem.data.date.toLocaleDateString('zh-CN')}
+              </time>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="empty-state">还没有诗。</p>
+    )
+  }
+</BaseLayout>
