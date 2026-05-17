@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL;
       <ul class="poem-list">
         {sorted.map((poem) => (
           <li>
-            <a href={`${base}poems/${poem.id}`} class="poem-card">
+            <a href={`${base}/poems/${poem.id}`} class="poem-card">
               <div>
                 <h2 class="poem-title">{poem.data.title}</h2>
                 {poem.data.excerpt && (
