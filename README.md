@@ -1,43 +1,7 @@
-# Astro Starter Kit: Minimal
+# 奴心诗集
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+前段时间女儿给我看她写的两句诗，让我想起自己读书时写的一些诗，于是找了一首给她看。她看后那种"爸爸居然会写诗"的表情，既惊奇又带着几分崇拜，就像我小时候从一个杂物柜子里发现了父亲写着几首诗的旧笔记本一样。于是我打算把以前写的诗整理一下，并把写诗这个兴趣再捡起来，给女儿做个引子，培养她对诗的兴趣。
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+基于 [Astro](https://astro.build) 构建，部署在 [GitHub Pages](https://wmzy.github.io/nuxin-poem/)。
