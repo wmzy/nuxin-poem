@@ -9,28 +9,61 @@ const sorted = poems.sort(
 const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="诗">
-  {
-    sorted.length > 0 ? (
-      <ul class="poem-list">
-        {sorted.map((poem) => (
-          <li>
-            <a href={`${base}/poems/${poem.id}`} class="poem-card">
-              <div>
-                <h2 class="poem-title">{poem.data.title}</h2>
-                {poem.data.excerpt && (
-                  <p class="poem-desc">{poem.data.excerpt}</p>
-                )}
-              </div>
-              <time class="poem-date">
-                {poem.data.date.toLocaleDateString('zh-CN')}
-              </time>
-            </a>
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <p class="empty-state">还没有诗。</p>
-    )
-  }
+<BaseLayout title="奴心诗集">
+  <article class="preface">
+    <p>
+      前段时间女儿给我看她写的两句诗，让我想起自己读书时写的一些诗，于是找了一首给她看。她看后那种"爸爸居然会写诗"的表情，既惊奇又带着几分崇拜，就像我小时候从一个杂物柜子里发现了父亲写着几首诗的旧笔记本一样。于是我打算把以前写的诗整理一下，并把写诗这个兴趣再捡起来，给女儿做个引子，培养她对诗的兴趣。
+    </p>
+  </article>
+  <section class="poem-index">
+    <h2>诗目</h2>
+    {
+      sorted.length > 0 ? (
+        <ul class="poem-list">
+          {sorted.map((poem) => (
+            <li>
+              <a href={`${base}/poems/${poem.id}`} class="poem-card">
+                <div>
+                  <h3 class="poem-title">{poem.data.title}</h3>
+                  {poem.data.excerpt && (
+                    <p class="poem-desc">{poem.data.excerpt}</p>
+                  )}
+                </div>
+                <time class="poem-date">
+                  {poem.data.date.toLocaleDateString('zh-CN')}
+                </time>
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="empty-state">还没有诗。</p>
+      )
+    }
+  </section>
 </BaseLayout>
+
+<style>
+  .preface {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .preface p {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 2;
+    text-indent: 2em;
+    color: var(--color-text);
+  }
+
+  .poem-index h2 {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+  }
+</style>
