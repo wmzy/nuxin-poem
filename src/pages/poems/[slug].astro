@@ -20,9 +20,7 @@ const base = import.meta.env.BASE_URL;
     <a href={base} class="back-link">返回</a>
     <div class="poem-header">
       <h1>{poem.data.title}</h1>
-      <div class="meta">
-        <time>{poem.data.date.toLocaleDateString('zh-CN')}</time>
-      </div>
+
     </div>
     <div class="poem-body">
       <Content />
